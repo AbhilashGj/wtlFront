@@ -1,0 +1,85 @@
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Button from './components/Button/Button';
+import Navigation from './components/Navigation/Navigation';
+import Login from './components/Login/Login';
+import NewCustomer from './components/NewCustomer/NewCustomer';
+
+class App extends Component {
+
+  constructor()
+  {
+    super();
+    this.state=
+    {
+      route:'signOut',
+      isSignedIn:true,
+      user:{
+              name:'',
+              email:''
+           }
+    }
+  }
+
+
+  onRouteChange=(route)=>
+  {
+    if(route==='signOut')
+      this.setState({isSignedIn:false})
+    else if(route==='home')
+      this.setState({isSignedIn:true})
+    this.setState({route:route});
+  }
+
+
+
+
+  render() {
+    const
+    {
+      isSignedIn,route
+    }=this.state;
+    return (
+      <div className="one">
+      <div className="App">
+        <header className="App-header">
+       <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}/>
+       <Login />
+       {
+
+       }
+        </header>
+      </div>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+
+
+
+
+
+
+
+
+/*<main class="pa0 black-80">
+        <form class="measure center">
+          <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+            <div class="mt3">
+              <input class="input1 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="" name="NewCustomer"  id="NewCustomer" placeholder="Enter Customer Name" /><button className="button" href="#0">Login</button>
+
+            </div>
+            </fieldset>
+            </form>
+           </main>*/
+
+
+
+.pa0 {
+    padding-top: 0.5rem;
+    padding-left: 0.25rem;
+    padding-right: 10.75rem;

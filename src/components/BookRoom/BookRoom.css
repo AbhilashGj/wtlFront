@@ -1,0 +1,16 @@
+table
+{
+  	width: 100%;
+  	border: 1px solid black;
+}
+
+th,td
+{
+	border: 1px solid gray;	
+}
+
+.bookRoomF
+{
+	margin: 0 auto;
+	width: 900px;
+}
